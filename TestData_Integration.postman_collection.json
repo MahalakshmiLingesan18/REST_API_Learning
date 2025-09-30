@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "70386edf-2175-4edf-9b98-6488a06d34ee",
+		"name": "TestData_Integration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47034651"
+	},
+	"item": [
+		{
+			"name": "Create_Change_Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();\r",
+							"\r",
+							"let sys_id = response.result.sys_id;\r",
+							"pm.collectionVariables.set(\"Sys_ID\", sys_id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function() {\r",
+							"    pm.response.to.have.status(201);\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"short_description\": \"{{Short_Description}}\",\r\n    \"description\": \"{{Description}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{Instance}}.service-now.com/api/now/table/:tableName",
+					"protocol": "https",
+					"host": [
+						"{{Instance}}",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						":tableName"
+					],
+					"variable": [
+						{
+							"key": "tableName",
+							"value": "{{TableName}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve_Change_Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { \r",
+							"    pm.response.to.have.status(200);    \r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{Instance}}.service-now.com/api/now/table/:tableName/{{Sys_ID}}",
+					"protocol": "https",
+					"host": [
+						"{{Instance}}",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						":tableName",
+						"{{Sys_ID}}"
+					],
+					"variable": [
+						{
+							"key": "tableName",
+							"value": "{{TableName}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update_Change_Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches text\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Chaining for change request\");\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"short_description\": \"{{Short_Description}}\",\r\n    \"description\": \"{{Description}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{Instance}}.service-now.com/api/now/table/:tableName/{{Sys_ID}}",
+					"protocol": "https",
+					"host": [
+						"{{Instance}}",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						":tableName",
+						"{{Sys_ID}}"
+					],
+					"variable": [
+						{
+							"key": "tableName",
+							"value": "{{TableName}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete_the_Change_request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://{{Instance}}.service-now.com/api/now/table/:tableName/{{Sys_ID}}",
+					"protocol": "https",
+					"host": [
+						"{{Instance}}",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						":tableName",
+						"{{Sys_ID}}"
+					],
+					"variable": [
+						{
+							"key": "tableName",
+							"value": "{{TableName}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "yC8=NAigk0@K",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "admin",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Instance",
+			"value": ""
+		},
+		{
+			"key": "TableName",
+			"value": ""
+		},
+		{
+			"key": "Sys_ID",
+			"value": ""
+		}
+	]
+}
