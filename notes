@@ -62,3 +62,29 @@ Best Practices for REST APIs
 - Implement proper status codes for clarity
 - Document APIs using OpenAPI/Swagger
 - Secure APIs with HTTPS, authentication, and rate limiting
+
+================
+   Newman CLI 
+================
+
+1. Run a Collection
+   newman run collection.json
+
+2. Run with Environment
+   newman run collection.json -e environment.json
+
+3. Run with Data File (CSV/JSON)
+   newman run collection.json -d data.csv
+
+4. Run with Reporters (CLI, HTML, JSON, JUnit)
+   newman run collection.json -reporters cli,html,json
+
+5. Save HTML Report to Custom Folder
+   newman run collection.json -r html --reporter-html-export reports/report.html
+
+6. Set Iterations
+   newman run collection.json -n 5
+
+7. Run in CI/CD (exit with code on failure)
+   newman run collection.json --suppress-exit-code
+
