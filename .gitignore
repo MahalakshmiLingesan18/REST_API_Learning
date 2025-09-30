@@ -17,11 +17,11 @@ dependency-reduced-pom.xml
 *.ear
 
 # =========================
-# Logs
+# Reports
 # =========================
-*.log
-logs/
-test-output/
+surefire-reports/
+cucumber-reports/
+extent-reports/
 
 # =========================
 # IDE settings
