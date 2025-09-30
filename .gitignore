@@ -17,6 +17,13 @@ dependency-reduced-pom.xml
 *.ear
 
 # =========================
+# Logs
+# =========================
+*.log
+logs/
+test-output/
+
+# =========================
 # Reports
 # =========================
 surefire-reports/
@@ -36,3 +43,9 @@ extent-reports/
 # =========================
 .DS_Store
 Thumbs.db
+
+# =========================
+# Environment / Secrets
+# =========================
+*.env
+.env.local
