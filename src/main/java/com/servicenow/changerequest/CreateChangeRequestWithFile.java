@@ -1,4 +1,4 @@
-package com.servicenow;
+package com.servicenow.changerequest;
 
 import static io.restassured.RestAssured.*;
 
