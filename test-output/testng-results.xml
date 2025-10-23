@@ -2,24 +2,48 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-30T22:34:45 IST" name="Default suite" finished-at="2025-09-30T22:34:57 IST" duration-ms="12353">
+  <suite started-at="2025-10-08T22:41:49 IST" name="RestAssured" finished-at="2025-10-08T22:41:58 IST" duration-ms="9704">
     <groups>
     </groups>
-    <test started-at="2025-09-30T22:34:45 IST" name="Default test" finished-at="2025-09-30T22:34:57 IST" duration-ms="12353">
-      <class name="com.servicenow.IncidentManagement">
-        <test-method signature="createChangeRequest()[pri:1, instance:com.servicenow.IncidentManagement@10e31a9a]" started-at="2025-09-30T22:34:45 IST" name="createChangeRequest" finished-at="2025-09-30T22:34:53 IST" duration-ms="8090" status="PASS">
+    <test started-at="2025-10-08T22:41:49 IST" name="IncidentManagement" finished-at="2025-10-08T22:41:58 IST" duration-ms="9704">
+      <class name="com.servicenow.chaining.UpdateIncident">
+        <test-method is-config="true" signature="requestUploadPayload()[pri:0, instance:com.servicenow.chaining.UpdateIncident@a1153bc]" started-at="2025-10-08T22:41:54 IST" name="requestUploadPayload" finished-at="2025-10-08T22:41:54 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createChangeRequest -->
-        <test-method signature="updateChangeRequest()[pri:2, instance:com.servicenow.IncidentManagement@10e31a9a]" started-at="2025-09-30T22:34:53 IST" name="updateChangeRequest" finished-at="2025-09-30T22:34:55 IST" duration-ms="2098" status="PASS">
+        </test-method> <!-- requestUploadPayload -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.servicenow.chaining.UpdateIncident@a1153bc]" started-at="2025-10-08T22:41:54 IST" name="setUp" finished-at="2025-10-08T22:41:54 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- updateChangeRequest -->
-        <test-method signature="deleteChangeRequest()[pri:3, instance:com.servicenow.IncidentManagement@10e31a9a]" started-at="2025-09-30T22:34:55 IST" name="deleteChangeRequest" finished-at="2025-09-30T22:34:57 IST" duration-ms="2035" status="PASS">
+        </test-method> <!-- setUp -->
+        <test-method signature="update()[pri:0, instance:com.servicenow.chaining.UpdateIncident@a1153bc]" started-at="2025-10-08T22:41:54 IST" name="update" finished-at="2025-10-08T22:41:56 IST" duration-ms="1870" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deleteChangeRequest -->
-      </class> <!-- com.servicenow.IncidentManagement -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- update -->
+      </class> <!-- com.servicenow.chaining.UpdateIncident -->
+      <class name="com.servicenow.chaining.CreateNewIncident">
+        <test-method is-config="true" signature="requestCreatePayload()[pri:0, instance:com.servicenow.chaining.CreateNewIncident@4d5d943d]" started-at="2025-10-08T22:41:49 IST" name="requestCreatePayload" finished-at="2025-10-08T22:41:49 IST" duration-ms="19" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- requestCreatePayload -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.servicenow.chaining.CreateNewIncident@4d5d943d]" started-at="2025-10-08T22:41:49 IST" name="setUp" finished-at="2025-10-08T22:41:49 IST" duration-ms="532" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="create()[pri:0, instance:com.servicenow.chaining.CreateNewIncident@4d5d943d]" started-at="2025-10-08T22:41:49 IST" name="create" finished-at="2025-10-08T22:41:54 IST" duration-ms="5130" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- create -->
+      </class> <!-- com.servicenow.chaining.CreateNewIncident -->
+      <class name="com.servicenow.chaining.DeleteIncident">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.servicenow.chaining.DeleteIncident@1aafa419]" started-at="2025-10-08T22:41:56 IST" name="setUp" finished-at="2025-10-08T22:41:56 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="delete()[pri:0, instance:com.servicenow.chaining.DeleteIncident@1aafa419]" started-at="2025-10-08T22:41:56 IST" name="delete" finished-at="2025-10-08T22:41:58 IST" depends-on-methods="com.servicenow.chaining.CreateNewIncident.create" duration-ms="2072" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- delete -->
+      </class> <!-- com.servicenow.chaining.DeleteIncident -->
+    </test> <!-- IncidentManagement -->
+  </suite> <!-- RestAssured -->
 </testng-results>
