@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd"> -->
+
+<suite name="RestAssured">
+
+    <test name="IncidentManagement" preserve-order="true">
+        <classes>
+            <class name="com.servicenow.chaining.CreateNewIncident"/>
+            <class name="com.servicenow.chaining.UpdateIncident"/>
+            <class name="com.servicenow.chaining.DeleteIncident"/>
+        </classes>
+    </test>
+
+</suite>
